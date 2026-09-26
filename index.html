@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SAHAY 360</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+
+<header class="topbar">
+
+  <div class="brand">
+    <div class="logo">S</div>
+    <div>
+      <h1>SAHAY 360</h1>
+      <span>AI Victim Support</span>
+    </div>
+  </div>
+
+  <div class="top-controls">
+    <select id="languageSelect" onchange="changeLanguage()">
+      <option value="en">English</option>
+      <option value="hi">हिन्दी</option>
+      <option value="te">తెలుగు</option>
+      <option value="ta">தமிழ்</option>
+      <option value="kn">ಕನ್ನಡ</option>
+      <option value="ml">മലയാളം</option>
+      <option value="bn">বাংলা</option>
+      <option value="mr">मराठी</option>
+      <option value="gu">ગુજરાતી</option>
+      <option value="ur">اردو</option>
+    </select>
+
+    <button onclick="goHome()">⌂ Home</button>
+  </div>
+</header>
+
+
+
+
+<main id="app">
+
+  <!-- HOME -->
+  <section id="home" class="page active">
+
+    <div class="hero">
+      <div>
+        <p class="badge">🛡️ SAFE • PRIVATE • 24/7 SUPPORT</p>
+
+        <h2>You're not alone.<br>
+          <span>SAHAY is here to listen.</span>
+        </h2>
+
+        <p>
+          AI-assisted support for victims and complainants.
+          Understand your emotional state and connect with appropriate support.
+        </p>
+
+        <div class="hero-buttons">
+          <button class="primary" onclick="startAssessment()">
+            🧠 Stress & Trauma Assessment
+          </button>
+
+          <button class="danger" onclick="openSafeSignal()">
+            🤫 Silent Safe Signal
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-art">
+        <div class="shield">🛡️</div>
+        <h3>SAHAY 360</h3>
+        <p>Support • Safety • Care</p>
+      </div>
+    </div>
+
+
+    <div class="section-title">
+      <h2>How can SAHAY help you?</h2>
+      <p>Choose a service</p>
+    </div>
+
+
+    <div class="feature-grid">
+
+      <div class="feature-card" onclick="startAssessment()">
+        <div class="icon blue">🧠</div>
+        <h3>Stress & Trauma Assessment</h3>
+        <p>Understand your current stress and vulnerability level.</p>
+        <button>Start Assessment →</button>
+      </div>
+
+      <div class="feature-card" onclick="openChat()">
+        <div class="icon purple">🤖</div>
+        <h3>AI Assistant</h3>
+        <p>Talk to SAHAY and describe what you need.</p>
+        <button>Talk to SAHAY →</button>
+      </div>
+
+      <div class="feature-card" onclick="openSafeSignal()">
+        <div class="icon red">🤫</div>
+        <h3>Silent Safe Signal</h3>
+        <p>Need support but cannot speak? Send a silent signal.</p>
+        <button>Open Safe Signal →</button>
+      </div>
+
+      <div class="feature-card" onclick="openComfortRoom()">
+        <div class="icon green">🌿</div>
+        <h3>Personal Comfort Room</h3>
+        <p>Relax with rain, ocean, nature and calming sounds.</p>
+        <button>Enter Comfort Room →</button>
+      </div>
+
+      <div class="feature-card" onclick="openDailyRecovery()">
+        <div class="icon teal">🌱</div>
+        <h3>Daily Recovery Journey</h3>
+        <p>Take one small supportive step today.</p>
+        <button>Start Today's Check-in →</button>
+      </div>
+
+      <div class="feature-card" onclick="openIncidentMap()">
+        <div class="icon orange">🗺️</div>
+        <h3>SAHAY Incident Map</h3>
+        <p>Organize your incident narrative into important details.</p>
+        <button>Create Incident Map →</button>
+      </div>
+
+      <div class="feature-card" onclick="openServices()">
+        <div class="icon cyan">📞</div>
+        <h3>Support Services</h3>
+        <p>Explore counselling, legal, medical and emergency support.</p>
+        <button>View Services →</button>
+      </div>
+
+      <div class="feature-card" onclick="showResources()">
+        <div class="icon yellow">📚</div>
+        <h3>Resources</h3>
+        <p>Helpful information and support resources.</p>
+        <button>View Resources →</button>
+      </div>
+
+    </div>
+
+
+    <div class="voice-card">
+
+      <div>
+        <h3>🎙️ SAHAY Voice</h3>
+        <p>Choose the voice used for SAHAY responses.</p>
+      </div>
+
+      <div class="voice-options">
+        <label>
+          <input type="radio" name="voiceGender" value="female" checked>
+          👩 Female
+        </label>
+
+        <label>
+          <input type="radio" name="voiceGender" value="male">
+          👨 Male
+        </label>
+      </div>
+
+      <button onclick="testVoice()">🔊 Test Voice</button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ASSESSMENT -->
+  <section id="assessment" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Back</button>
+      <h2>🧠 Stress & Trauma Assessment</h2>
+    </div>
+
+    <div class="assessment-box">
+
+      <p class="notice">
+        This prototype is not a medical diagnosis. Your answers are used only
+        to demonstrate an AI-assisted support assessment.
+      </p>
+
+      <div class="question">
+        <h3>1. How are you feeling right now?</h3>
+
+        <label><input type="radio" name="q1" value="0"> Calm</label>
+        <label><input type="radio" name="q1" value="1"> A little worried</label>
+        <label><input type="radio" name="q1" value="2"> Very worried</label>
+        <label><input type="radio" name="q1" value="3"> Extremely distressed</label>
+      </div>
+
+      <div class="question">
+        <h3>2. Are you feeling unsafe right now?</h3>
+
+        <label><input type="radio" name="q2" value="0"> No</label>
+        <label><input type="radio" name="q2" value="1"> A little</label>
+        <label><input type="radio" name="q2" value="2"> Yes</label>
+        <label><input type="radio" name="q2" value="3"> Immediate danger</label>
+      </div>
+
+      <div class="question">
+        <h3>3. How difficult is it to concentrate?</h3>
+
+        <label><input type="radio" name="q3" value="0"> Not difficult</label>
+        <label><input type="radio" name="q3" value="1"> Slightly difficult</label>
+        <label><input type="radio" name="q3" value="2"> Very difficult</label>
+        <label><input type="radio" name="q3" value="3"> Extremely difficult</label>
+      </div>
+
+      <div class="question">
+        <h3>4. Are you experiencing fear or anxiety?</h3>
+
+        <label><input type="radio" name="q4" value="0"> No</label>
+        <label><input type="radio" name="q4" value="1"> Sometimes</label>
+        <label><input type="radio" name="q4" value="2"> Often</label>
+        <label><input type="radio" name="q4" value="3"> Constantly</label>
+      </div>
+
+      <div class="question">
+        <h3>5. Do you feel that you need immediate support?</h3>
+
+        <label><input type="radio" name="q5" value="0"> No</label>
+        <label><input type="radio" name="q5" value="1"> Maybe</label>
+        <label><input type="radio" name="q5" value="2"> Yes</label>
+        <label><input type="radio" name="q5" value="3"> Urgently</label>
+      </div>
+
+      <button class="primary large" onclick="calculateAssessment()">
+        Generate SVI Result
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RESULT -->
+  <section id="result" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>📊 Assessment Result</h2>
+    </div>
+
+    <div class="result-card">
+
+      <div id="resultIcon" class="result-icon">🟢</div>
+
+      <h2 id="resultLevel">LOW</h2>
+
+      <div class="score-circle">
+        <span id="sviScore">0</span>
+        <small>SVI</small>
+      </div>
+
+      <p id="resultMessage">
+        Your current responses indicate a lower support priority.
+      </p>
+
+      <div class="result-actions">
+
+        <button class="primary" onclick="showMoodMenu()">
+          💙 What Do You Need Right Now?
+        </button>
+
+        <button onclick="openDailyRecovery()">
+          🌱 Daily Recovery Journey
+        </button>
+
+        <button onclick="openServices()">
+          📞 Support Services
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- MOOD MENU -->
+  <section id="moodMenu" class="page">
+
+    <div class="page-header">
+      <button onclick="showPage('result')">← Back</button>
+      <h2>💙 What Do You Need Right Now?</h2>
+    </div>
+
+    <p class="center">
+      Choose what feels most useful for you right now.
+    </p>
+
+    <div class="mood-grid">
+
+      <div class="mood-card" onclick="selectMood('calm')">
+        <span>😌</span>
+        <h3>Calm me</h3>
+        <p>Help me feel calmer</p>
+      </div>
+
+      <div class="mood-card" onclick="selectMood('encourage')">
+        <span>💪</span>
+        <h3>Encourage me</h3>
+        <p>Give me supportive motivation</p>
+      </div>
+
+      <div class="mood-card" onclick="selectMood('talk')">
+        <span>🗣️</span>
+        <h3>Let me talk</h3>
+        <p>Give me a safe space to talk</p>
+      </div>
+
+      <div class="mood-card" onclick="selectMood('focus')">
+        <span>🧠</span>
+        <h3>Help me focus</h3>
+        <p>Help me ground and focus</p>
+      </div>
+
+      <div class="mood-card" onclick="selectMood('connect')">
+        <span>📞</span>
+        <h3>Connect me to someone</h3>
+        <p>Show me available support</p>
+      </div>
+
+      <div class="mood-card urgent-card" onclick="selectMood('urgent')">
+        <span>🚨</span>
+        <h3>I need urgent help</h3>
+        <p>I need immediate support</p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CALM -->
+  <section id="calmScreen" class="page">
+
+    <div class="page-header">
+      <button onclick="showPage('moodMenu')">← Back</button>
+      <h2>😌 Calm Me</h2>
+    </div>
+
+    <div class="breathing-box">
+
+      <div id="breathingCircle">
+        Breathe
+      </div>
+
+      <h2 id="breathingText">Ready?</h2>
+
+      <p id="calmTimer">02:00</p>
+
+      <button class="primary" onclick="startBreathing()">
+        ▶ Start
+      </button>
+
+      <button onclick="stopBreathing()">⏸ Stop</button>
+
+      <p class="support-message">
+        You can take this moment at your own pace.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- ENCOURAGE -->
+  <section id="encourageScreen" class="page">
+
+    <div class="page-header">
+      <button onclick="showPage('moodMenu')">← Back</button>
+      <h2>💪 Encourage Me</h2>
+    </div>
+
+    <div class="message-card">
+
+      <div class="big-emoji">💙</div>
+
+      <h2>You are taking a step by asking for support.</h2>
+
+      <p>
+        You don't have to solve everything at once.
+        Take one small step at a time.
+      </p>
+
+      <button class="primary" onclick="openChat()">
+        🤖 Talk to SAHAY
+      </button>
+
+      <button onclick="testVoice()">
+        🔊 Hear Supportive Message
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- CHAT -->
+  <section id="chat" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🤖 SAHAY AI Assistant</h2>
+    </div>
+
+    <div id="chatMessages" class="chat-box">
+
+      <div class="bot-message">
+        <b>SAHAY</b>
+        <p>I'm listening. You can tell me what happened in your own words.</p>
+      </div>
+
+    </div>
+
+    <div class="chat-input">
+
+      <textarea id="chatInput"
+        placeholder="Type what you want to tell SAHAY..."></textarea>
+
+      <button onclick="startSpeechRecognition()">🎙️</button>
+
+      <button class="primary" onclick="sendChat()">Send</button>
+
+    </div>
+
+    <button onclick="openIncidentMap()">
+      🗺️ Create Incident Map
+    </button>
+
+  </section>
+
+
+
+  <!-- SAFE SIGNAL -->
+  <section id="safeSignal" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🤫 Silent Safe Signal</h2>
+    </div>
+
+    <div class="safe-container">
+
+      <div class="safe-badge">
+        🤫 SAFE MODE ACTIVATED
+      </div>
+
+      <p>
+        Need support but cannot speak?
+        Use the button below.
+      </p>
+
+      <div
+        id="signalButton"
+        class="signal-button"
+        onclick="handleTap()"
+        onmousedown="startHold()"
+        onmouseup="cancelHold()"
+        ontouchstart="startHold()"
+        ontouchend="cancelHold()">
+
+        <strong>●</strong>
+        <span>TAP / HOLD</span>
+
+      </div>
+
+      <div class="signal-help">
+
+        <div>
+          🟢 <b>Single Tap</b>
+          <small>I NEED SUPPORT</small>
+        </div>
+
+        <div>
+          🟡 <b>Double Tap</b>
+          <small>I FEEL UNSAFE</small>
+        </div>
+
+        <div>
+          🔴 <b>Hold 2 seconds</b>
+          <small>URGENT HELP</small>
+        </div>
+
+      </div>
+
+      <p class="warning">
+        Safe Signal is a prototype support-prioritization feature.
+        It does not guarantee an emergency response.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SIGNAL RESULT -->
+  <section id="signalResult" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🤫 Signal Sent</h2>
+    </div>
+
+    <div class="signal-result-card">
+
+      <div id="signalEmoji" class="big-emoji">🟢</div>
+
+      <h2 id="signalTitle">I NEED SUPPORT</h2>
+
+      <p>
+        Your signal has been recorded by this prototype.
+      </p>
+
+      <div class="info-box">
+
+        <p>
+          <b>Priority:</b>
+          <span id="signalPriority">NORMAL</span>
+        </p>
+
+        <p>
+          <b>Time:</b>
+          <span id="signalTime"></span>
+        </p>
+
+        <p>
+          <b>Status:</b>
+          Awaiting human response
+        </p>
+
+      </div>
+
+      <button class="primary" onclick="showSupportAlert()">
+        🟡 View Support Alert
+      </button>
+
+      <button onclick="openSafeSignal()">
+        Send Another Signal
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SUPPORT ALERT -->
+  <section id="supportAlert" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🟡 Support Alert</h2>
+    </div>
+
+    <div class="alert-card">
+
+      <div class="big-emoji">🟡</div>
+
+      <h2>Support Requested</h2>
+
+      <p>
+        A support request has been created in the prototype.
+      </p>
+
+      <div class="info-box">
+        <p><b>Signal:</b> <span id="alertSignal"></span></p>
+        <p><b>Priority:</b> <span id="alertPriority"></span></p>
+        <p><b>Status:</b> Awaiting human response</p>
+        <p><b>Time:</b> <span id="alertTime"></span></p>
+      </div>
+
+      <button class="primary" onclick="showUrgentSupport()">
+        📞 View Support Options
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- URGENT -->
+  <section id="urgentScreen" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🚨 Urgent Support</h2>
+    </div>
+
+    <div class="urgent-box">
+
+      <div class="big-emoji">🚨</div>
+
+      <h2>Immediate Support Options</h2>
+
+      <p>
+        If you are in immediate danger, contact appropriate emergency
+        services or a trusted person.
+      </p>
+
+      <div class="service-buttons">
+
+        <a href="tel:14566" class="service-button">
+          📞 Call Helpline 14566
+        </a>
+
+        <a href="tel:112" class="service-button emergency">
+          🚨 Call Emergency 112
+        </a>
+
+        <button onclick="openServices()">
+          🤝 Connect to Support
+        </button>
+
+      </div>
+
+      <p class="warning">
+        This prototype does not automatically dispatch police,
+        ambulance or other emergency services.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- COMFORT ROOM -->
+  <section id="comfortRoom" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🌿 Personal Comfort Room</h2>
+    </div>
+
+    <p class="center">
+      Take your time. This is your personal space.
+    </p>
+
+    <div class="environment-grid">
+
+      <div class="environment-card rain"
+           onclick="selectEnvironment('rain')">
+        <span>🌧️</span>
+        <h3>Rain</h3>
+        <p>Soft rainfall atmosphere</p>
+      </div>
+
+      <div class="environment-card ocean"
+           onclick="selectEnvironment('ocean')">
+        <span>🌊</span>
+        <h3>Ocean</h3>
+        <p>Calm ocean atmosphere</p>
+      </div>
+
+      <div class="environment-card nature"
+           onclick="selectEnvironment('nature')">
+        <span>🌳</span>
+        <h3>Nature</h3>
+        <p>Peaceful nature atmosphere</p>
+      </div>
+
+      <div class="environment-card piano"
+           onclick="selectEnvironment('piano')">
+        <span>🎹</span>
+        <h3>Piano Music</h3>
+        <p>Gentle piano atmosphere</p>
+      </div>
+
+      <div class="environment-card soft"
+           onclick="selectEnvironment('soft')">
+        <span>🎶</span>
+        <h3>Soft Music</h3>
+        <p>Quiet relaxing atmosphere</p>
+      </div>
+
+    </div>
+
+    <div id="relaxSession" class="relax-session">
+
+      <div id="relaxIcon">🌿</div>
+
+      <h2 id="environmentTitle">Choose an environment</h2>
+
+      <p>Breathe… Relax… You’re safe here.</p>
+
+      <div class="relax-timer" id="relaxTimer">
+        02:00
+      </div>
+
+      <div id="relaxBreathing" class="small-breath">
+        Breathe In
+      </div>
+
+      <button class="primary" onclick="startRelaxation()">
+        ▶ Start
+      </button>
+
+      <button onclick="pauseRelaxation()">⏸ Pause</button>
+
+      <button onclick="resetRelaxation()">↻ Restart</button>
+
+      <button onclick="toggleSound()">
+        🔊 Sound On/Off
+      </button>
+
+      <p class="warning">
+        This space is for relaxation and emotional support.
+        If you are in immediate danger, use the emergency/support
+        options available in SAHAY.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- DAILY RECOVERY -->
+  <section id="dailyRecovery" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🌱 Daily Recovery Journey</h2>
+    </div>
+
+    <div class="progress-container">
+
+      <div class="progress-text">
+        <span id="recoveryProgressText">0/5</span>
+        <span>Today's Check-in</span>
+      </div>
+
+      <div class="progress-bar">
+        <div id="recoveryProgress"></div>
+      </div>
+
+    </div>
+
+    <div class="recovery-grid">
+
+      <div class="recovery-card">
+        <span>💙</span>
+        <h3>Mood Check</h3>
+
+        <div class="mood-options">
+
+          <button onclick="saveMood('Good')">😊 Good</button>
+          <button onclick="saveMood('Okay')">🙂 Okay</button>
+          <button onclick="saveMood('Low')">😐 Low</button>
+          <button onclick="saveMood('Worried')">😟 Worried</button>
+          <button onclick="saveMood('Very difficult')">
+            😔 Very difficult
+          </button>
+
+        </div>
+
+        <p id="moodStatus"></p>
+      </div>
+
+
+      <div class="recovery-card">
+
+        <span>🧘</span>
+
+        <h3>2-Minute Calm</h3>
+
+        <div id="dailyCalmTimer">02:00</div>
+
+        <button onclick="startDailyCalm()">
+          ▶ Start
+        </button>
+
+        <button onclick="pauseDailyCalm()">
+          ⏸ Pause
+        </button>
+
+        <button onclick="resetDailyCalm()">
+          ↻ Reset
+        </button>
+
+        <p id="calmStatus"></p>
+
+      </div>
+
+
+      <div class="recovery-card">
+
+        <span>📝</span>
+
+        <h3>Optional Journal</h3>
+
+        <textarea
+          id="journalText"
+          placeholder="Write something privately..."></textarea>
+
+        <button onclick="saveJournal()">Save</button>
+        <button onclick="skipJournal()">Skip</button>
+
+        <p id="journalStatus"></p>
+
+      </div>
+
+
+      <div class="recovery-card">
+
+        <span>🌱</span>
+
+        <h3>One Small Positive Activity</h3>
+
+        <p id="positiveActivity">
+          Loading your small step...
+        </p>
+
+        <button onclick="completePositiveActivity()">
+          ✓ Complete
+        </button>
+
+        <p id="positiveStatus"></p>
+
+      </div>
+
+
+      <div class="recovery-card">
+
+        <span>📞</span>
+
+        <h3>Support Connection</h3>
+
+        <p>Optional</p>
+
+        <button onclick="openServices()">
+          View Support
+        </button>
+
+        <button onclick="skipSupport()">
+          Not now
+        </button>
+
+        <p id="supportStatus"></p>
+
+      </div>
+
+    </div>
+
+    <div class="completion-box">
+
+      <button class="primary large" onclick="completeDailyCheckIn()">
+        ✓ Complete Today's Check-in
+      </button>
+
+      <p id="completionMessage"></p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- INCIDENT MAP -->
+  <section id="incidentMap" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>🗺️ SAHAY Incident Map</h2>
+    </div>
+
+    <div class="incident-input">
+
+      <p>
+        Describe what happened in your own words.
+      </p>
+
+      <textarea id="incidentNarrative"
+        placeholder="Example: Yesterday near my college, a person threatened me. I felt scared and need legal support."></textarea>
+
+      <div class="input-buttons">
+
+        <button onclick="startIncidentVoice()">
+          🎙️ Speak
+        </button>
+
+        <button class="primary" onclick="createIncidentMap()">
+          🗺️ Create Map
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div id="incidentResult" class="incident-result">
+
+      <div class="map-node">
+        📅
+        <h3>WHEN</h3>
+        <input id="incidentWhen" value="Not mentioned.">
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="map-node">
+        📍
+        <h3>WHERE</h3>
+        <input id="incidentWhere" value="Not mentioned.">
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="map-node">
+        ⚠️
+        <h3>WHAT HAPPENED</h3>
+        <textarea id="incidentWhat">Not mentioned.</textarea>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="map-node">
+        👤
+        <h3>PEOPLE INVOLVED</h3>
+        <textarea id="incidentPeople">Not mentioned.</textarea>
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="map-node">
+        😟
+        <h3>USER FEELING</h3>
+        <input id="incidentFeeling" value="Not mentioned.">
+      </div>
+
+      <div class="arrow">↓</div>
+
+      <div class="map-node">
+        🆘
+        <h3>SUPPORT NEEDED</h3>
+        <input id="incidentSupport" value="Not mentioned.">
+      </div>
+
+      <div class="incident-actions">
+
+        <button onclick="editIncidentMap()">
+          ✏️ Edit
+        </button>
+
+        <button class="primary" onclick="confirmIncident()">
+          ✓ Confirm Incident
+        </button>
+
+      </div>
+
+      <p class="warning">
+        Please review the Incident Map before confirming.
+        Prototype extraction may contain errors.
+      </p>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- SERVICES -->
+  <section id="services" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>📞 Support Services</h2>
+    </div>
+
+    <div class="services-grid">
+
+      <div class="service-card">
+        <span>🧑‍⚕️</span>
+        <h3>Counselling Support</h3>
+        <p>Explore emotional support options.</p>
+        <button onclick="alert('Counselling support option selected.')">
+          Connect
+        </button>
+      </div>
+
+      <div class="service-card">
+        <span>⚖️</span>
+        <h3>Legal Support</h3>
+        <p>Explore legal assistance options.</p>
+        <button onclick="alert('Legal support option selected.')">
+          Connect
+        </button>
+      </div>
+
+      <div class="service-card">
+        <span>🏥</span>
+        <h3>Medical Support</h3>
+        <p>Explore medical assistance options.</p>
+        <button onclick="alert('Medical support option selected.')">
+          Connect
+        </button>
+      </div>
+
+      <div class="service-card">
+        <span>🛡️</span>
+        <h3>Protection Support</h3>
+        <p>Explore protection-related support.</p>
+        <button onclick="alert('Protection support option selected.')">
+          Connect
+        </button>
+      </div>
+
+      <div class="service-card">
+        <span>📞</span>
+        <h3>National Helpline</h3>
+        <p>National Helpline Against Atrocities.</p>
+
+        <a href="tel:14566" class="call-button">
+          📞 14566
+        </a>
+      </div>
+
+      <div class="service-card emergency-service">
+        <span>🚨</span>
+        <h3>Emergency</h3>
+        <p>If you are in immediate danger.</p>
+
+        <a href="tel:112" class="call-button">
+          🚨 112
+        </a>
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- FOCUS -->
+  <section id="focusScreen" class="page">
+
+    <div class="page-header">
+      <button onclick="showPage('moodMenu')">← Back</button>
+      <h2>🧠 Help Me Focus</h2>
+    </div>
+
+    <div class="grounding-card">
+
+      <h2>5–4–3–2–1 Grounding</h2>
+
+      <p>
+        Slowly notice things around you.
+      </p>
+
+      <div class="grounding-list">
+
+        <div>👀 <b>5</b> things you can see</div>
+        <div>✋ <b>4</b> things you can touch</div>
+        <div>👂 <b>3</b> things you can hear</div>
+        <div>👃 <b>2</b> things you can smell</div>
+        <div>👅 <b>1</b> thing you can taste</div>
+
+      </div>
+
+      <button class="primary" onclick="testVoice()">
+        🔊 Guide Me
+      </button>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- RESOURCES -->
+  <section id="resources" class="page">
+
+    <div class="page-header">
+      <button onclick="goHome()">← Home</button>
+      <h2>📚 Resources</h2>
+    </div>
+
+    <div class="resource-box">
+
+      <h3>🛡️ Your safety matters</h3>
+
+      <p>
+        SAHAY is designed as a prototype to help organize support options
+        and provide a simple first point of interaction.
+      </p>
+
+      <hr>
+
+      <h3>📞 Support</h3>
+      <p>National Helpline Against Atrocities: <b>14566</b></p>
+
+      <h3>🚨 Emergency</h3>
+      <p>Emergency number: <b>112</b></p>
+
+      <h3>🔐 Privacy</h3>
+      <p>
+        Avoid sharing passwords, financial information or other
+        unnecessary sensitive information in this prototype.
+      </p>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<footer>
+  <p>SAHAY 360 • AI-assisted victim support prototype • 24/7</p>
+</footer>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
